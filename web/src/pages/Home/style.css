@@ -1,0 +1,25 @@
+.homePage {
+    display: flex;
+    background-color: #f6f3ff;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 700px;
+    align-items: center;
+    text-align: center;
+}
+
+form {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    width: 570px;
+    height: 330px;
+    background: #E6E7FE;
+    border-radius: 10px;
+    box-shadow: 20px, black;
+}
+
+.login {
+    margin: auto;
+}
