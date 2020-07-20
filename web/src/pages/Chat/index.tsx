@@ -56,6 +56,18 @@ const Chat = (props: Props) => {
     return (
         <div>
             <div className="chatPage">
+                <ul className="chatBox">
+
+                    {msgs.map(msg => (
+                        <li
+                            className={msg.userName == userName ? 'myMsg' : 'otherMsg'}
+                            key={msg.id}
+                        >
+                            <h5>{msg.userName}</h5>
+                            <p>{msg.texto}</p>
+                        </li>
+                    ))}
+                </ul>
                 <ul>
 
                     <input
@@ -66,17 +78,6 @@ const Chat = (props: Props) => {
                         onChange={handleInputChange}
                     />
                     <button type="submit" onClick={handleSubmit}>Enviar</button>
-                </ul>
-                <ul>
-
-                    {msgs.map(msg => (
-                        <li
-                            className={msg.userName == userName ? 'myMsg' : 'otherMsg'}
-                            key={msg.id}
-                        >
-                            <p>{msg.texto}</p>
-                        </li>
-                    ))}
                 </ul>
             </div>
         </div>

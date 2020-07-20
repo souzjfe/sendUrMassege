@@ -1,34 +1,41 @@
 .chatPage {
     background-color: #f6f3ff;
     width: 100%;
-    max-width: 1100px;
+    max-width: 700px;
     margin: 0 auto;
     min-height: 700px;
 }
 
-.chatPage ul {
+h5 {
+    font-size: 10px;
+    margin-bottom: 0;
+    color: #a4a6d1;
+}
+
+.chatBox {
+    display: flex;
+    word-break: break-all;
+    flex-flow: column wrap;
     list-style: none;
 }
 
-.chatPage input {
-    align-items: flex-end;
-}
-
 .otherMsg {
-    border-radius: 0px 20px 20px 10px;
-    background: #E6E7FE;
-    max-width: 1010px;
+    align-self: flex-start;
+    width: fit-content;
+    border-radius: 0px 10px 10px 40px;
+    background: #cdceec;
     margin: 10px;
-    max-height: 80px;
-    padding: 5px 15px 5px;
+    padding: 5px 20px 10px;
 }
 
 .myMsg {
-    float: right;
-    border-radius: 10px 0px 20px 10px;
-    background: #E6E7FE;
-    max-width: 1010px;
+    order: 3;
+    text-align: right;
+    align-self: flex-end;
+    min-width: 15%;
+    width: fit-content;
+    border-radius: 10px 0px 40px 10px;
+    background: #cdceec;
     margin: 10px;
-    max-height: 80px;
-    padding: 5px 15px 5px;
+    padding: 5px 20px 10px;
 }
