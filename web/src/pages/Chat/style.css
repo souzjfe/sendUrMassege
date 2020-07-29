@@ -20,7 +20,6 @@ h5 {
 }
 
 .otherMsg {
-    align-self: flex-start;
     width: fit-content;
     border-radius: 0px 10px 10px 40px;
     background: #cdceec;
@@ -29,10 +28,8 @@ h5 {
 }
 
 .myMsg {
-    order: 3;
     text-align: right;
     align-self: flex-end;
-    min-width: 15%;
     width: fit-content;
     border-radius: 10px 0px 40px 10px;
     background: #cdceec;

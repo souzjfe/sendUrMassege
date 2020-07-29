@@ -6,7 +6,7 @@ import Chat from './pages/Chat';
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Route component = {Home} path="/" exact />
+            <Route component = {Home} exact path="/"  />
             <Route component = {Chat} path="/chat/:name"/>
         </BrowserRouter>
     );
