@@ -1,6 +1,7 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import './style.css';
 import api from '../../services/api';
+import Message from '../../components/Message'
 interface Msg {
     id: number;
     texto: string;
@@ -20,9 +21,6 @@ interface Props {
 }
 
 const Chat = (props: Props) => {
-
-
-
 
     const userName = props.match.params.name;
     const [msgs, setMsgs] = useState<Msg[]>([]);
@@ -47,7 +45,7 @@ const Chat = (props: Props) => {
 
         setNewMsg({ ...newMsg, [name]: value })
     }
-    async function handleSubmit(event: FormEvent) {
+    async function handleSubmit() {
         await api.post('msg', newMsg);
         setControl(control + 1);
     }
@@ -59,13 +57,11 @@ const Chat = (props: Props) => {
                 <ul className="chatBox">
 
                     {msgs.map(msg => (
-                        <li
-                            className={msg.userName == userName ? 'myMsg' : 'otherMsg'}
-                            key={msg.id}
-                        >
-                            <h5>{msg.userName}</h5>
-                            <p>{msg.texto}</p>
-                        </li>
+                        <Message 
+                        key={msg.id}
+                        msg={msg}
+                        name={userName}
+                        />
                     ))}
                 </ul>
                 <ul>
@@ -77,6 +73,7 @@ const Chat = (props: Props) => {
                         placeholder="Escreva sua mensagem"
                         onChange={handleInputChange}
                     />
+                    
                     <button type="submit" onClick={handleSubmit}>Enviar</button>
                 </ul>
             </div>
