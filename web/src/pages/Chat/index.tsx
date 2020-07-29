@@ -53,18 +53,21 @@ const Chat = (props: Props) => {
 
     return (
         <div>
-            <div className="chatPage">
-                <ul className="chatBox">
+            <div 
+            className="chatPage"
+            onSubmit={handleSubmit}
+            >
+                <div className="chatBox">
 
                     {msgs.map(msg => (
-                        <Message 
-                        key={msg.id}
-                        msg={msg}
-                        name={userName}
+                        <Message
+                            key={msg.id}
+                            msg={msg}
+                            name={userName}
                         />
                     ))}
-                </ul>
-                <ul>
+                </div>
+                <aside>
 
                     <input
                         type="text"
@@ -73,9 +76,9 @@ const Chat = (props: Props) => {
                         placeholder="Escreva sua mensagem"
                         onChange={handleInputChange}
                     />
-                    
-                    <button type="submit" onClick={handleSubmit}>Enviar</button>
-                </ul>
+
+                    <button type="submit" onSubmit={handleSubmit}>Enviar</button>
+                </aside>
             </div>
         </div>
     );

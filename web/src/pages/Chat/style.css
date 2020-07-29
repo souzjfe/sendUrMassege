@@ -1,15 +1,12 @@
 .chatPage {
+    display: flex;
+    flex-direction: column;
     background-color: #f6f3ff;
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
     min-height: 700px;
-}
-
-i {
-    font-size: 10px;
-    margin-bottom: 0;
-    color: #a4a6d1;
+    direction: ltr;
 }
 
 .chatBox {
@@ -17,4 +14,23 @@ i {
     word-break: break-all;
     flex-flow: column wrap;
     list-style: none;
+}
+
+.chatPage input {
+    width: 85%;
+    text-align: initial;
+    border-style: none;
+    border-radius: 10px 0 0 10px;
+    background-color: #a4a6d1;
+    align-self: flex-end;
+    margin: 10px 0;
+}
+
+.chatPage button {
+    width: 15%;
+    border-style: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #8f8dd8;
+    align-self: flex-end;
+    margin-bottom: 20px;
 }

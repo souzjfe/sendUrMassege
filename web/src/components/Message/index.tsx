@@ -14,11 +14,17 @@ interface MsgProps {
 }
 
 const Msg: React.FC<MsgProps> = ({ msg, name }) => {
+    function thisMsgIsFrom (userName: string) {
+        if (userName == name)
+            return true;
+        return false;
+    }
     return (
         <BodyMessage
-            my = {msg.userName == name ? true : false}
+            isMyMsg = {thisMsgIsFrom(msg.userName) ? true : false}
         >
-            <i>{msg.userName}</i>
+            
+            <i>{thisMsgIsFrom(msg.userName) ? "" : msg.userName }</i>
             <p>{msg.texto}</p>
         </BodyMessage>
     );
