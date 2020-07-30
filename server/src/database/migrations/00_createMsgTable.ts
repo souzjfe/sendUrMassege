@@ -6,8 +6,11 @@ export async function up(knex: Knex) {
         .schema
         .createTable('msg', table => {
             table.increments('id').primary();
-            table.string('texto').notNullable;
+            table.string('text').notNullable;
             table.string('userName').notNullable;
+            table.string('hour').notNullable;
+            table.string('date').notNullable;
+            
             
 
         });

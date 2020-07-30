@@ -4,13 +4,11 @@ import api from '../../services/api';
 import Message from '../../components/Message'
 interface Msg {
     id: number;
-    texto: string;
+    text: string;
     userName: string;
-    // ano: number;
-    // mes: number;
-    // dia:number;
-    // hora:number;
-    // minuto:number;
+    hour:string;
+    data: string;
+    
 }
 interface Props {
     match: {
@@ -25,7 +23,7 @@ const Chat = (props: Props) => {
     const userName = props.match.params.name;
     const [msgs, setMsgs] = useState<Msg[]>([]);
     const [newMsg, setNewMsg] = useState({
-        texto: '',
+        text: '',
         userName: userName,
 
     });
@@ -50,15 +48,16 @@ const Chat = (props: Props) => {
         setControl(control + 1);
     }
 
-
+    const datas = new Date;
+    console.log(datas.toDateString())
+    console.log(datas.getUTCHours() + ":")
     return (
         <div>
             <div 
             className="chatPage"
-            onSubmit={handleSubmit}
             >
                 <div className="chatBox">
-
+                
                     {msgs.map(msg => (
                         <Message
                             key={msg.id}
@@ -71,13 +70,13 @@ const Chat = (props: Props) => {
 
                     <input
                         type="text"
-                        name="texto"
+                        name="text"
                         id="enviarMsg"
                         placeholder="Escreva sua mensagem"
                         onChange={handleInputChange}
                     />
 
-                    <button type="submit" onSubmit={handleSubmit}>Enviar</button>
+                    <button type="submit" onClick={handleSubmit}>Enviar</button>
                 </aside>
             </div>
         </div>

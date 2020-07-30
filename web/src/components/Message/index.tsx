@@ -3,17 +3,17 @@ import { BodyMessage } from "./styles";
 interface MsgProps {
     msg: {
 
-        texto: string;
+        text: string;
         userName: string;
-        // hour: number;
-        // id: number;
-        // userName: string;
-        // texto: string;
+        hour: string;
+        data: string;
+
     }
     name: string;
 }
 
 const Msg: React.FC<MsgProps> = ({ msg, name }) => {
+    
     function thisMsgIsFrom (userName: string) {
         if (userName == name)
             return true;
@@ -25,7 +25,8 @@ const Msg: React.FC<MsgProps> = ({ msg, name }) => {
         >
             
             <i>{thisMsgIsFrom(msg.userName) ? "" : msg.userName }</i>
-            <p>{msg.texto}</p>
+            <p>{msg.text}</p>
+            <i>{msg.hour}</i>
         </BodyMessage>
     );
 

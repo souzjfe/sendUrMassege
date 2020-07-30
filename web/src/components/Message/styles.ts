@@ -11,12 +11,16 @@ export const BodyMessage = styled.div<MsgProps>`
     margin: 10px;
     padding: 5px 20px 10px;
     border-radius: 0px 10px 10px 40px;
-
+    
+    p {
+        margin:0;
+    }
     
     i{
         font-size: 10px;
-        margin-bottom: 0;
+        margin-top: 0;
         color: #a4a6d1;
+        padding: 0;
     }
     .hour {
         font-size: 8px;

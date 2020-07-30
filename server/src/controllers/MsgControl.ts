@@ -12,21 +12,18 @@ class MsgControl {
 
     }
     async create(req: Request, res: Response) {
-        var d = new Date().toDateString();
-        const data = {
-            // hora: d.getHours(),
-            // minuto: d.getMinutes(),
-            // dia:d.getDay(),
-            // mes:d.getMonth(),
-            // ano: d.getFullYear(),
-        }
+        var d = new Date();
+        const date =  d.toDateString();  
+        const hour = d.getHours() + ":" + d.getUTCMinutes();
         const {
-            texto,
+            text,
             userName,
         } = req.body;
         const msg = {
-            texto,
+            text,
             userName,
+            date,
+            hour
         }
         const msgId = (await knex('msg').insert(msg))[0];
         return res.json({ 
